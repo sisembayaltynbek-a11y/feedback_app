@@ -1,0 +1,91 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container for the form */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Style each form group */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Input, textarea, select styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="password"],
+form input[type="file"],
+form input[type="range"],
+form input[type="radio"],
+form input[type="checkbox"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccd1d9;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* Error styling */
+.error {
+    border-color: #e74c3c;
+    background-color: #fdecea;
+}
+
+form .error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Submit button */
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+        margin: 20px;
+    }
+}

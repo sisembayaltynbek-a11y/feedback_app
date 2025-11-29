@@ -1,0 +1,13 @@
+{% extends "reviews/base.html" %}
+
+{% block page_title %}
+    Thank You
+{% endblock %}
+
+{% block content %}
+    <div class="thank-you-container">
+        <ul>{% for item in reviews %}
+            <li>{{item.user_name}} (Rating{{item.rate}}) {{item.id}}  </li>
+        {%endfor%}</ul>
+    </div>
+{% endblock %}

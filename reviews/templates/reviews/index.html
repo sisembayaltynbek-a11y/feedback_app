@@ -1,0 +1,85 @@
+{% extends "reviews/base.html" %}
+
+{% block page_title %}
+Reviews
+{% endblock %}
+
+{% block content %}
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <!-- <a href=""></a> -->
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div>
+                {{field.label}}
+                {{field}}
+                {{field.error_messages}}
+            </div>
+        {% endfor %}
+
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}
+
+{% comment %} class="form-control {% if field.errors %}error{% endif %}" {% endcomment %}
+
+{% comment %} ------------------------------------------------- {% endcomment %}
+
+{% comment %} 
+        {% if is_valid %}
+            <h1>Fill the Blanks</h1>
+        {% endif %}
+
+        <!-- Entry (Single-line text) -->
+        <label for="username">User Name:</label>
+        <input id="username" name="username" type="text">
+        <br><br>
+
+        <!-- Radiobuttons -->
+        <p>Rating (Radio Buttons):</p>
+        <label for="rate1">1</label><br>
+        <input id="rate1" name="rating" type="radio" value="1">
+
+        <label for="rate1">2</label><br>
+        <input id="rate2" name="rating" type="radio" value="2">
+
+        <label for="rate1">3</label><br>
+        <input id="rate3" name="rating" type="radio" value="3">
+
+        <!-- Checkbuttons (Checkboxes) -->
+        <p>Options (Checkboxes):</p>
+        <input id="opt1" name="option1" type="checkbox" value="1">
+        <label for="opt1">Option 1</label><br>
+
+        <input id="opt2" name="option2" type="checkbox" value="2">
+        <label for="opt2">Option 2</label><br><br>
+
+        <!-- Text (Multiline text) -->
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Select List (Dropdown) -->
+        <label for="dropdown">Choose an item:</label>
+        <select id="dropdown" name="dropdown">
+            <option value="item1">Item 1</option>
+            <option value="item2">Item 2</option>
+            <option value="item3">Item 3</option>
+        </select><br><br>
+
+        <!-- Number (Spinbox) -->
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" name="quantity" type="number" min="-10" max="10"><br><br>
+
+        <!-- Range (Scale/Slider) -->
+        <label for="volume">Volume:</label>
+        <input id="volume" name="volume" type="range" min="0" max="100"><br><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password"><br><br>
+
+        <!-- File Upload -->
+        <label for="file">Upload File:</label>
+        <input id="file" name="file" type="file"><br><br> {% endcomment %}
+
+        <!-- Submit Button -->

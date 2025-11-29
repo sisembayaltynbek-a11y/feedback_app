@@ -1,0 +1,24 @@
+{% extends "reviews/base.html" %}
+
+{% block page_title %}
+    Thank You
+{% endblock %}
+
+{% block content %}
+    <div class="thank-you-container">
+        <h1>{{review.user_name}}</h1>
+        <h2>{{review.review_text}}</h2>
+        <h2>{{review.rate}}</h2><br>
+        <!-- <h2>{{review.liked}}</h2> -->
+            {% if is_liked %}
+                <br><p>This is your Liked review</p>
+                <input type="checkbox" name="subject" checked>
+            {% else %}
+                <form action='/listreviews/liked_id' method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="liked_id" value="{{review.id}}">
+                    {{review.is_active}}
+                </form>
+            {% endif %}
+    </div>
+{% endblock %}
